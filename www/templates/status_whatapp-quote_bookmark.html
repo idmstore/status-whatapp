@@ -1,0 +1,55 @@
+	<ion-view view-title="Bookmark Quote" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title>Bookmark Quote</ion-nav-title>
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-quote_bookmark" class="page-quote_bookmark">
+		
+
+
+<ion-list class="list" ng-if="quote_bookmark.length != 0">
+       <div class="card" ng-repeat="item in quote_bookmark"  >
+        	 <div class="item item-divider">{{ item.category }}</div>
+            <div class="item item-text-wrap">
+                    <blockquote>
+                        <p ng-bind-html="item.quote | to_trusted"></p>
+                        <footer>{{ item.author }}</footer>
+                    </blockquote>
+            </div>
+            
+            <div class="item item-text-wrap">   
+                <div class="button-bar">
+                <button class="button button-small button-energized-900 ink icon ion-android-textsms" run-app-sms="true" phone="12345" message="{{item.quote  }}"> SMS</button> 
+                <button class="button button-small button-calm-900 ink icon ion-social-twitter" run-app-twitter="true" message="{{item.quote  }}">Twitter</button> 
+               
+                <button class="button button-small button-calm ink icon ion-email" run-app-email="true" email="username@domain" subject="Quote" message="{{item.quote  }}"> Email</button> 
+                <button class="button button-small button-balanced-900 ink icon ion-social-whatsapp" run-app-whatsapp="true" message="{{item.quote  }}"> WA</button> 
+                <button class="button button-small button-stable balanced ink icon ion-ios-chatbubble" run-app-line="true" message="{{item.quote  }}"> Line</button> 
+                </div>
+            </div>  
+                                
+        </div>
+        
+        <ion-item class="item item-button">
+    	   <button class="button button-block button-calm" ng-click="clearDbVirtualQuote();">
+                <i class="icon ion-ios-refresh-outline"></i> Clear
+           </button>
+    	</ion-item>
+
+</ion-list>
+
+
+<!-- no bookmark -->
+<div class="quote_bookmark padding text-center" ng-if="quote_bookmark.length == 0">
+	<i class="icon ion-ios-bookmarks-outline"></i>
+	<p>There are no items</p>
+</div>
+<!-- no bookmark -->    
+    
+    
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

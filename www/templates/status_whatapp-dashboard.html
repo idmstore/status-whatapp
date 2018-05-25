@@ -1,0 +1,34 @@
+	<ion-view view-title="Dashboard" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title>Dashboard</ion-nav-title>
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-dashboard" class=" page-dashboard">
+		
+		<div class="dashboard-panel">
+			<!-- row -->
+			<div class="row">
+				<a class="col-33 light positive-bg ink"  ng-href="#/status_whatapp/quote" >
+					<i class="icon ion-android-hangout" ></i>
+					<p>Quote</p>
+				</a>
+				<a class="col-33 light positive-900-bg ink"  ng-href="#/status_whatapp/quote_bookmark" >
+					<i class="icon ion-android-favorite" ></i>
+					<p>Bookmarks</p>
+				</a>
+				<a class="col-33 light calm-bg ink"  ng-href="#/status_whatapp/about_us" >
+					<i class="icon ion-help-buoy" ></i>
+					<p>About US</p>
+				</a>
+			</div>
+			<!-- ./row -->
+			
+
+		</div>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

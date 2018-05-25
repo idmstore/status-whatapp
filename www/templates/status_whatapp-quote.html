@@ -1,0 +1,58 @@
+	<ion-view view-title="Quote" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title>Quote</ion-nav-title>
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-quote" class=" page-quote">
+		
+            <ion-refresher pulling-text="pull for refresh"  on-refresh="doRefresh()"></ion-refresher>   
+ 			
+             <ion-list class="card list">
+				<div class="item item-input">
+					<i class="icon ion-search placeholder-icon"></i>
+					<input type="search" ng-model="q" placeholder="Filter" aria-label="filter quotes" />
+				</div>
+			</ion-list>
+            
+            <div class="list">
+                <div class="card" ng-repeat="item in quotes | filter:q as results" ng-init="$last ? fireEvent() : null" >
+                	 <div class="item item-divider">{{ item.category }}</div>
+                    <div class="item item-text-wrap">
+                            <blockquote>
+                                <p ng-bind-html="item.quote | to_trusted"></p>
+                                <footer>{{ item.author }}</footer>
+                            </blockquote>
+                            <button class="button button-small button-calm" ng-click="addToDbVirtual(item);"><i class="icon ion-ios-star"></i> Bookmark</button>
+                    </div>
+                    
+                    <div class="item item-text-wrap">   
+                        <div class="button-bar">
+                        <button class="button button-small button-energized-900 ink icon ion-android-textsms" run-app-sms="true" phone="12345" message="{{item.quote  }}"> SMS</button> 
+                        <button class="button button-small button-calm-900 ink icon ion-social-twitter" run-app-twitter="true" message="{{item.quote  }}">Twitter</button> 
+                       
+                        <button class="button button-small button-calm ink icon ion-email" run-app-email="true" email="username@domain" subject="Quote" message="{{item.quote  }}"> Email</button> 
+                        <button class="button button-small button-balanced-900 ink icon ion-social-whatsapp" run-app-whatsapp="true" message="{{item.quote  }}"> WA</button> 
+                        <button class="button button-small button-stable balanced ink icon ion-ios-chatbubble" run-app-line="true" message="{{item.quote  }}"> Line</button> 
+                        </div>
+                    </div>  
+                                        
+                </div>
+            </div>  
+            
+            <ion-list class="list">
+                <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="onInfinite()" distance="5px" ng-if="hasMoreData"></ion-infinite-scroll>
+            </ion-list>
+            
+            <ion-list class="list">
+				<div class="item" ng-if="results.length == 0" >
+					<p></p>
+				</div>
+			</ion-list>
+            	
+    
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

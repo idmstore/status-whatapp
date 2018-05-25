@@ -1,0 +1,20 @@
+<ion-tabs class="tabs-striped  tabs-icon-top tabs-background-light tabs-color-assertive-900" data-ink-opacity=".35" >
+	<ion-tab class="menu-quote" title="{{ 'Quote' | translate }}" icon-off="ion-android-hangout" icon-on="ion-android-hangout" ui-sref="status_whatapp.quote" >
+		<ion-nav-view animation="none" name="status_whatapp-quote"></ion-nav-view>
+	</ion-tab>
+	<ion-tab class="menu-quote_bookmark" title="{{ 'Bookmarks' | translate }}" icon-off="ion-android-favorite" icon-on="ion-android-favorite" ui-sref="status_whatapp.quote_bookmark" >
+		<ion-nav-view animation="none" name="status_whatapp-quote_bookmark"></ion-nav-view>
+	</ion-tab>
+	<ion-tab class="menu-about_us" title="{{ 'About US' | translate }}" icon-off="ion-help-buoy" icon-on="ion-help-buoy" ui-sref="status_whatapp.about_us" >
+		<ion-nav-view animation="none" name="status_whatapp-about_us"></ion-nav-view>
+	</ion-tab>
+	<ion-tab class="hide menu-about_us" title="About"  ui-sref="status_whatapp.about_us"  >
+		<ion-nav-view animation="none" name="status_whatapp-about_us"></ion-nav-view>
+	</ion-tab>
+	<ion-tab class="hide menu-dashboard" title="Dashboard"  ui-sref="status_whatapp.dashboard"  >
+		<ion-nav-view animation="none" name="status_whatapp-dashboard"></ion-nav-view>
+	</ion-tab>
+	<ion-tab class="hide menu-slide_tab_menu" title="Menu"  ui-sref="status_whatapp.slide_tab_menu"  >
+		<ion-nav-view animation="none" name="status_whatapp-slide_tab_menu"></ion-nav-view>
+	</ion-tab>
+</ion-tabs>

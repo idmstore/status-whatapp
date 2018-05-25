@@ -1,0 +1,53 @@
+	<ion-view view-title="About" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title>About</ion-nav-title>
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll  id="page-about_us" class=" page-about_us">
+		
+<div class="padding scroll">
+
+    <div class="padding about_us-box">
+        <h2>IdmstoreNet</h2>
+        <div>
+            
+        </div>
+    </div>
+    <br/>
+
+    <div class="disable-user-behavior about_us-box">
+     
+      <a class="item item-icon-left" ng-click="openURL('https://facebook.com/fp.abdulwahid')" >
+        <i class="positive icon ion-social-facebook"></i>
+        Like Us on Facebook
+      </a>
+      
+      <a class="item item-icon-left" ng-click="openURL('')" >
+        <i class="assertive icon ion-social-googleplus"></i>
+        Join us on Google+
+      </a>
+      
+      <a class="item item-icon-left" ng-click="openURL('')" >
+        <i class="calm icon ion-social-twitter"></i>
+       Follow me on Twitter
+      </a>
+      
+       <a class="item item-icon-left" ng-click="openURL('mailto://wahid.pmt@gmail.com')" >
+        <i class="icon ion-android-mail royal"></i>
+        For Business Cooperation
+        <p>
+            Email: wahid.pmt@gmail.com
+        </p>
+      </a>
+      
+    </div>
+    <br/>
+</div>
+<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

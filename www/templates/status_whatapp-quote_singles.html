@@ -1,0 +1,36 @@
+	<ion-view view-title="{{ quote.category }}" hide-nav-bar="false" >
+		<!-- popover -->
+		<ion-nav-buttons side="right">
+			<button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+		</ion-nav-buttons>
+		<!-- ./popover -->
+		<ion-nav-title>{{ quote.category }}</ion-nav-title>
+		<!-- content -->
+		<ion-content delegate-handle="top" lazy-scroll scroll="true"   id="page-quote_singles" class="page-quote_singles">
+		
+			<ion-refresher pulling-text="Pull to refresh..."  on-refresh="doRefresh()"></ion-refresher>
+			<div class="list ">
+
+					<!-- to_trusted -->
+					<div class="item item-text-wrap noborder to_trusted {{ fontsize }}" ng-bind-html="quote.quote | strHTML"></div>
+					<!-- ./to_trusted -->
+
+					<!-- heading-1 -->
+					<div class="item item-divider"  ng-bind-html="quote.category | to_trusted">{{quote.category}}</div>
+					<!-- ./heading-1 -->
+
+					<!-- images -->
+					<div class="item noborder"><img class="full-image" image-lazy-loader="lines" image-lazy-src="{{quote.avatar}}"   zoom-view="true" zoom-src="{{quote.avatar}}"/></div>
+					<!-- ./images -->
+			</div>
+			<div class="list">
+				<div class="item tabs tabs-secondary tabs-icon-left tabs-stable">
+					<a class="tab-item" ng-click="addToDbVirtual(quote);"><i class="icon ion-android-add-circle"></i> {{ 'Add To Bookmark' | translate }}</a>
+					<a class="tab-item" ng-href="#/status_whatapp/quote_bookmark"><i class="icon ion-ios-star"></i> {{ 'Bookmark' | translate }}</a>
+				</div>
+			</div>
+			<br/><br/><br/>
+
+		</ion-content>
+		<!-- ./content -->
+	</ion-view>

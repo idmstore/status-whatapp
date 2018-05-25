@@ -1,2 +1,2 @@
-# status-whatapp
+# Status WhatApp
 Kumpulan Status WhatsApp
